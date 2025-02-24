@@ -1,0 +1,28 @@
+@import "../../index.scss";
+
+
+
+
+.filters {
+    background-color: $background-color;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 1%;
+}
+.title{
+    color: #00000073;
+    font-size: 15px;
+    margin-bottom: 2%;
+}
+.title span{
+    color: black;
+}
+
+.ant-btn-primary{
+    padding: 16px;
+}
+
+.filters .ant-btn{
+    margin-left: auto;
+}

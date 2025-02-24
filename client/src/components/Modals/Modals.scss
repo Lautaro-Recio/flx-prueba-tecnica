@@ -1,0 +1,34 @@
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 30px;
+}
+.ant-modal-content{
+    padding: 0px !important;    
+}
+
+.ant-modal-title{
+    border-width: 1px !important;
+    border-bottom: solid #f2f2f2 ;
+    padding: 15px 25px !important;
+}
+.add-user .ant-input,.add-user .ant-select{
+    margin-top: 5px;
+}
+.add-user {
+    padding: 20px !important; 
+}
+.ant-modal-footer{
+    text-align: end !important;
+    margin-top: 12px !important;
+    padding: 10px 15px !important;
+    border-top: solid #f2f2f2 !important;
+    border-width: 1px !important;
+}
+.ant-select{
+    width: 100%;
+}
+
+.delete{
+    color: red; 
+}
