@@ -4,7 +4,7 @@
 */
 
 function reverseString(str) {
-  // Tu solución acá  
+  return str.split("").reverse().join("");
 }
 
 /*
@@ -12,8 +12,10 @@ function reverseString(str) {
   Escribe una función isPalindrome que tome una cadena como entrada 
   y devuelva true si la cadena es un palíndromo, y false en caso contrario.
 */
+
 function isPalindrome(str) {
-  // Tu solución acá
+  if (str.split("").reverse().join("") == str) return true;
+  else return false;
 }
 
 /*
@@ -30,10 +32,22 @@ function isPalindrome(str) {
 */
 
 function closestPair(arr) {
-  // Tu solución acá
+  arr.sort((a, b) => a - b);
+
+  let pairMin = [];
+  let minDiff = Infinity;
+
+  for (let i = 0; i < arr.length - 1; i++) {
+    let diff = Math.abs(arr[i + 1] - arr[i]);
+
+    if (minDiff > diff) {
+      pairMin = [arr[i], arr[i + 1]];
+      minDiff = diff;
+    }
+  }
+
+  return pairMin;
 }
-
-
 /*
   Ejercicio 4: Calculadora - Programación Orientada a Objetos
   La calculadora debe ser capaz de realizar operaciones aritméticas básicas, 
@@ -67,12 +81,50 @@ function closestPair(arr) {
 */
 
 class Calculator {
-  // Tu solución acá
+  constructor() {
+    this.lastResult = null;
+  }
+
+  add(a, b) {
+    this.lastResult = a + b;
+    return this.lastResult;
+  }
+
+  subtract(a, b) {
+    this.lastResult = a - b;
+    return this.lastResult;
+  }
+
+  multiply(a, b) {
+    this.lastResult = a * b;
+    return this.lastResult;
+  }
+
+  divide(a, b) {
+    if (b === 0) {
+      throw new Error("Division by zero is not allowed");
+    }
+    this.lastResult = a / b;
+    return this.lastResult;
+  }
+
+  getLastResult() {
+    return this.lastResult;
+  }
+
+  exponentiate(base, exponent) {if (exponent < 0) {
+    throw new Error("Exponentiation with negative exponent is not allowed");
+  }
+  this.lastResult = Math.pow(base, exponent);
+  return this.lastResult;
+  }
 }
+
+
 
 module.exports = {
   closestPair,
   isPalindrome,
   reverseString,
   Calculator,
-}
+};
